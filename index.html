@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>موقعي الشخصي</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <h1>اسمي هنا</h1>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من أنا</a></li>
+                    <li><a href="#courses">كورساتي</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                </ul>
+                <button id="darkModeToggle" title="تبديل الوضع الليلي">🌙</button>
+            </nav>
+        </header>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>مرحباً بكم في موقعي</h2>
+                <p>أنا مطور ويب، أصنع مواقع عصرية وجذابة.</p>
+                <button onclick="scrollToSection('contact')">تواصل معي</button>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>من أنا</h2>
+            <p>نبذة مختصرة عنك هنا. خبراتك ومهاراتك وأهدافك.</p>
+        </section>
+        <section id="courses" class="courses">
+            <h2>كورساتي</h2>
+            <div class="search-bar">
+                <input type="text" id="courseSearchInput" placeholder="ابحث عن كورس..." aria-label="ابحث عن كورس">
+            </div>
+            <div class="courses-list">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=1200&h=1200&facepad=2&q=80"
+                            alt="أساسيات تطوير الويب" class="course-img">
+                    </div>
+                    <h3>أساسيات تطوير الويب</h3>
+                    <p>تعلم HTML, CSS, JavaScript من الصفر حتى الاحتراف.</p>
+                    <div class="course-price">1200 جنيه</div>
+                    <button class="enroll-btn" onclick="window.open('https://wa.me/201067765058','_blank')">اشترك
+                        الآن</button>
+                    <a href="contet.html" class="course-link">مشاهدة الكورس</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=1200&h=1200&facepad=2&q=80"
+                            alt="تصميم واجهات المستخدم" class="course-img">
+                    </div>
+                    <h3>تصميم واجهات المستخدم</h3>
+                    <p>دورة متكاملة حول تصميم واجهات عصرية باستخدام Figma وCSS.</p>
+                    <div class="course-price">1500 جنيه</div>
+                    <button class="enroll-btn" onclick="window.open('https://wa.me/201067765058','_blank')">اشترك
+                        الآن</button>
+                    <a href="contet.html" class="course-link">مشاهدة الكورس</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=1200&h=1200&facepad=2&q=80"
+                            alt="برمجة تطبيقات الجوال" class="course-img">
+                    </div>
+                    <h3>برمجة تطبيقات الجوال</h3>
+                    <p>تعلم بناء تطبيقات أندرويد وiOS باستخدام Flutter.</p>
+                    <div class="course-price">2000 جنيه</div>
+                    <button class="enroll-btn" onclick="window.open('https://wa.me/201067765058','_blank')">اشترك
+                        الآن</button>
+                    <a href="contet.html" class="course-link">مشاهدة الكورس</a>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>تواصل معي</h2>
+            <form>
+                <input type="text" placeholder="اسمك" required>
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <textarea placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </section>
+        <footer>
+            <p>جميع الحقوق محفوظة &copy; 2025</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+
+</html>

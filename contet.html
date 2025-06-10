@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>صفحة الكورس</title>
+        <link rel="stylesheet" href="sc.css">
+    </head>
+
+    <body class="course-page">
+        <div id="codeModal" class="modal-overlay" style="display:none;">
+            <div class="modal-box">
+                <h2>يرجى إدخال الكود للدخول</h2>
+                <input type="password" id="accessCodeInput" placeholder="ادخل الكود هنا" autofocus>
+                <button id="submitCodeBtn">دخول</button>
+                <div id="codeError" style="color:#e53935; margin-top:10px; display:none;">الكود غير صحيح!</div>
+            </div>
+        </div>
+        <header class="header-bar">
+            <div class="header-content">
+                <img src="logo.png" alt="لوجو" class="site-logo">
+                <nav class="header-nav">
+                    <a href="#" class="nav-link">الرئيسية</a>
+                    <a href="#" class="nav-link">كورساتي</a>
+                    <a href="#" class="nav-link">تواصل</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="login-btn">تسجيل الدخول</button>
+                </div>
+            </div>
+        </header>
+        <section class="course-hero">
+            <div class="course-hero-img-wrap">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=1200&h=1200&facepad=2&q=80"
+                    alt="صورة الكورس" class="course-hero-img">
+
+            </div>
+            <div class="course-hero-info">
+                <h1 class="course-hero-title">الكورس المجاني لليالي الامتحان (برنامج نجيب) - الصف الثالث الثانوي</h1>
+                <p class="course-hero-desc">احصل على مراجعة شاملة ومجانية لأهم الأسئلة المتوقعة في الامتحان مع شرح وافٍ
+                    لكل جزئية. الكورس متاح للجميع بدون تسجيل أو دفع أي رسوم.</p>
+
+            </div>
+        </section>
+        <section class="course-content-section">
+            <div class="course-content-header">
+                <h2>محتوى الكورس</h2>
+            </div>
+            <div class="course-content-list">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-title">امتحان النصوص والقراءة (1 - 6)</button>
+                        <div class="accordion-content">
+                            <ul class="accordion-list">
+                                <li>شرح نص 1 مع أسئلة متوقعة</li>
+                                <li>شرح نص 2 مع أسئلة متوقعة</li>
+                                <li>شرح نص 3 مع أسئلة متوقعة</li>
+                                <li>شرح نص 4 مع أسئلة متوقعة</li>
+                                <li>شرح نص 5 مع أسئلة متوقعة</li>
+                                <li>شرح نص 6 مع أسئلة متوقعة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-title">امتحان الأدب والنصوص (الجزء الأول) (1 - 6)</button>
+                        <div class="accordion-content">
+                            <ul class="accordion-list">
+                                <li>شرح الأدب 1 وأسئلة نصوص</li>
+                                <li>شرح الأدب 2 وأسئلة نصوص</li>
+                                <li>شرح الأدب 3 وأسئلة نصوص</li>
+                                <li>شرح الأدب 4 وأسئلة نصوص</li>
+                                <li>شرح الأدب 5 وأسئلة نصوص</li>
+                                <li>شرح الأدب 6 وأسئلة نصوص</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-title">امتحان النحو (الجزء الثاني) (1 - 6)</button>
+                        <div class="accordion-content">
+                            <ul class="accordion-list">
+                                <li>شرح قاعدة نحوية 1 مع تدريبات</li>
+                                <li>شرح قاعدة نحوية 2 مع تدريبات</li>
+                                <li>شرح قاعدة نحوية 3 مع تدريبات</li>
+                                <li>شرح قاعدة نحوية 4 مع تدريبات</li>
+                                <li>شرح قاعدة نحوية 5 مع تدريبات</li>
+                                <li>شرح قاعدة نحوية 6 مع تدريبات</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-title">امتحان الاستيعاب السياسي (إجباري) (10 - 6)</button>
+                        <div class="accordion-content">
+                            <ul class="accordion-list">
+                                <li>أسئلة استيعاب سياسي 6</li>
+                                <li>أسئلة استيعاب سياسي 7</li>
+                                <li>أسئلة استيعاب سياسي 8</li>
+                                <li>أسئلة استيعاب سياسي 9</li>
+                                <li>أسئلة استيعاب سياسي 10</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer-bar">
+            <div class="footer-content">
+                <img src="logo.png" alt="لوجو" class="footer-logo">
+                <div class="footer-social">
+                    <a href="#" class="social-icon">Telegram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+
+                    <a href="#" class="social-icon">Facebook</a>
+                </div>
+                <div class="footer-copy">جميع الحقوق محفوظة &copy; 2025</div>
+            </div>
+        </footer>
+        <script src="jsc.js"></script>
+    </body>
+
+</html>
