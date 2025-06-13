@@ -1,0 +1,38 @@
+  <div class="accordion-item">
+                        <button class="accordion-title">الحصة 1: مقدمة الكورس</button>
+                        <div class="accordion-content">
+                          
+                            <div class="lesson-task">التكليف: كتابة ملخص عن أهداف الكورس.</div>
+                            <button class="watch-video-btn big-blue-btn" data-wistia="9c5951t696">مشاهدة
+                                الفيديو</button>
+                        </div>
+                    </div>
+
+
+                         const CORRECT_CODE = '1234'; // يمكنك تغيير الكود هنا
+     ```
+   - غيّر `'1234'` إلى الكود الذي تريده.
+
+2. لتغيير لينك الفيديو:
+   - في ملف `contet.html`، ابحث عن الزر:
+     
+```html
+     <button class="watch-video-btn big-blue-btn" data-wistia="9c5951t696">مشاهدة الفيديو</button>
+     ```
+   - غيّر قيمة `data-wistia="9c5951t696"` إلى كود الفيديو الجديد من Wistia (مثلاً: `data-wistia="NEW_ID"`).
+   - إذا كنت تريد تغيير الرابط في iframe مباشرةً (في كود الجافاسكريبت)، غيّر السطر في ملف `jsc.js`:
+     
+```javascript
+     video.src = 'https://samyyty2007.wistia.com/medias/9c5951t696';
+     ```
+     إلى الرابط الجديد للفيديو.
+
+3. إذا كنت تستخدم زر "مشاهدة الفيديو" مع خاصية Wistia:
+   - في ملف `jsc.js`، ابحث عن:
+     
+```javascript
+     video.src = `https://fast.wistia.net/embed/iframe/${wistiaId}?seo=false&videoFoam=true`;
+     ```
+   - هذا السطر يأخذ الكود من خاصية `data-wistia` تلقائياً، فقط غير الكود في الزر كما في الخطوة السابقة.
+
+لا تنس حفظ التعديلات وإعادة تحميل الصفحة لرؤية

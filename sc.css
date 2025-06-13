@@ -221,48 +221,77 @@ body.course-page {
     padding: 0 32px;
 }
 
+/* تحسين مظهر القائمة المندسة (الأكورديون) */
 .accordion {
     background: none;
-    border-radius: 12px;
-    margin-top: 12px;
+    border-radius: 16px;
+    margin-top: 20px;
+    box-shadow: 0 2px 16px rgba(30, 136, 229, 0.10);
+    padding: 0 0 10px 0;
 }
 
 .accordion-item {
     background: #23243a;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 14px;
+    margin-bottom: 18px;
     overflow: hidden;
-    box-shadow: 0 1px 4px rgba(30, 136, 229, 0.07);
+    box-shadow: 0 2px 12px rgba(30, 136, 229, 0.10);
+    border: 1.5px solid #263159;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+.accordion-item.active {
+    box-shadow: 0 4px 24px rgba(30, 136, 229, 0.18);
+    border-color: #1e88e5;
 }
 
 .accordion-title {
     width: 100%;
-    background: #b71c1c;
+    background: linear-gradient(90deg, #b71c1c 60%, #23243a 100%);
     color: #fff;
     border: none;
     outline: none;
-    padding: 16px 18px;
-    font-size: 1.1rem;
+    padding: 20px 24px;
+    font-size: 1.18rem;
     font-weight: bold;
     text-align: right;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #263159;
 }
 
-.accordion-title:hover {
-    background: #d32f2f;
+.accordion-title:hover,
+.accordion-item.active .accordion-title {
+    background: linear-gradient(90deg, #d32f2f 60%, #23243a 100%);
+    color: #fff;
 }
 
 .accordion-content {
     background: #181f32;
     color: #fff;
-    padding: 16px 18px;
-    font-size: 1rem;
+    padding: 22px 28px 18px 18px;
+    font-size: 1.05rem;
     display: none;
+    border-radius: 0 0 14px 14px;
+    border-top: 1px solid #263159;
 }
 
 .accordion-item.active .accordion-content {
     display: block;
+    animation: fadeInAccordion 0.5s;
+}
+
+@keyframes fadeInAccordion {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .accordion-list {
@@ -274,41 +303,54 @@ body.course-page {
 .accordion-list li {
     background: #23243a;
     color: #fff;
-    margin-bottom: 6px;
-    padding: 12px 18px 12px 12px;
-    border-radius: 8px;
-    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 14px 22px 14px 14px;
+    border-radius: 10px;
+    font-size: 1.07rem;
     position: relative;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    border-right: 4px solid #1e88e5;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border-right: 5px solid #1e88e5;
+    box-shadow: 0 1px 6px rgba(30, 136, 229, 0.07);
 }
 
 .accordion-list li:hover {
     background: #1e88e5;
     color: #fff;
+    box-shadow: 0 2px 12px rgba(30, 136, 229, 0.13);
 }
 
-.accordion-list li ul {
-    list-style: none;
-    margin: 8px 0 0 0;
-    padding: 0 0 0 18px;
-    background: #181f32;
-    border-radius: 6px;
-}
-
-.accordion-list li ul li {
-    background: #181f32;
-    color: #bdbdbd;
-    border-right: 3px solid #43a047;
-    margin-bottom: 4px;
-    padding: 10px 16px 10px 10px;
-    font-size: 0.97rem;
-}
-
-.accordion-list li ul li:hover {
-    background: #43a047;
+.lesson-task {
+    background: #263159;
     color: #fff;
+    margin: 18px 0 10px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1.01rem;
+    border-right: 4px solid #b71c1c;
+    box-shadow: 0 1px 4px rgba(30, 136, 229, 0.07);
+}
+
+.watch-video-btn {
+    background: linear-gradient(90deg, #1e88e5 60%, #23243a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 6px rgba(30, 136, 229, 0.10);
+    display: inline-block;
+}
+
+.watch-video-btn:hover {
+    background: linear-gradient(90deg, #1565c0 60%, #23243a 100%);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(30, 136, 229, 0.18);
 }
 
 .footer-bar {
@@ -492,4 +534,108 @@ body.dark-mode #submitCodeBtn {
 
 body.dark-mode #submitCodeBtn:hover {
     background: #ff5722;
+}
+
+/* نافذة عرض فيديو Wistia بشكل عصري */
+.wistia-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 24, 38, 0.93);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInAccordion 0.3s;
+}
+
+.wistia-modal-box {
+    background: linear-gradient(135deg, #23243a 80%, #1e90ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(30, 144, 255, 0.18);
+    padding: 0;
+    position: relative;
+    width: 90vw;
+    max-width: 700px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.wistia-modal-title {
+    background: linear-gradient(90deg, #e53935 60%, #1e90ff 100%);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 16px 24px 12px 24px;
+    text-align: right;
+    border-bottom: 1px solid #1e90ff33;
+    letter-spacing: 0.5px;
+}
+
+.wistia-modal-close {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: #fff;
+    color: #e53935;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #1e90ff22;
+    transition: background 0.2s, color 0.2s;
+    z-index: 2;
+}
+.wistia-modal-close:hover {
+    background: #e53935;
+    color: #fff;
+}
+
+.wistia-modal-iframe {
+    width: 100%;
+    height: 55vh;
+    min-height: 320px;
+    border: none;
+    background: #000;
+    border-radius: 0 0 18px 18px;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .wistia-modal-box {
+        max-width: 98vw;
+        max-height: 90vh;
+    }
+    .wistia-modal-iframe {
+        height: 35vh;
+        min-height: 180px;
+    }
+}
+
+/* زر مخصص للأزرار الزرقاء الكبيرة (مثل زر الفيديو في الصورة) */
+.big-blue-btn {
+    background: #2196f3 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px 28px !important;
+    font-size: 1.08rem !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.13);
+    transition: background 0.2s, box-shadow 0.2s;
+    text-align: right;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    display: block;
+}
+
+.big-blue-btn:hover {
+    background: #1565c0 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 24px rgba(33, 150, 243, 0.18);
 }

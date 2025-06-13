@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const input = document.getElementById('accessCodeInput');
     const btn = document.getElementById('submitCodeBtn');
     const error = document.getElementById('codeError');
-    const CORRECT_CODE = '1234'; // يمكنك تغيير الكود هنا
+    const CORRECT_CODE = 'TSH2007'; // يمكنك تغيير الكود هنا
     if (modal && input && btn) {
         modal.style.display = 'flex';
         input.focus();
@@ -97,6 +97,53 @@ document.addEventListener('DOMContentLoaded', function () {
             video.setAttribute('sandbox', 'allow-scripts allow-same-origin'); // أمان iframe
             video.src = 'https://samyyty2007.wistia.com/medias/9c5951t696';
             videoBox.appendChild(closeBtn);
+            videoBox.appendChild(video);
+            overlay.appendChild(videoBox);
+            document.body.appendChild(overlay);
+        });
+    });
+
+    // إضافة دعم زر مشاهدة الفيديو لكل حصة
+    document.querySelectorAll('.watch-video-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            // استخدم data-video-url إذا وجد، وإلا استخدم data-wistia
+            const videoUrl = btn.getAttribute('data-video-url');
+            const wistiaId = btn.getAttribute('data-wistia');
+            let src = '';
+            if (videoUrl) {
+                src = videoUrl;
+            } else if (wistiaId) {
+                src = `https://fast.wistia.net/embed/iframe/${wistiaId}?seo=false&videoFoam=true`;
+            } else {
+                return;
+            }
+            // Modal overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'wistia-modal-overlay';
+            // Video box
+            const videoBox = document.createElement('div');
+            videoBox.className = 'wistia-modal-box';
+            // Close button
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = '×';
+            closeBtn.className = 'wistia-modal-close';
+            closeBtn.addEventListener('click', function () {
+                document.body.removeChild(overlay);
+            });
+            // Video iframe (Wistia)
+            const video = document.createElement('iframe');
+            video.className = 'wistia-modal-iframe';
+            video.setAttribute('allow', 'autoplay; encrypted-media');
+            video.setAttribute('allowfullscreen', '');
+            video.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+            video.src = src;
+            // عنوان أعلى الفيديو
+            const videoTitle = document.createElement('div');
+            videoTitle.textContent = 'مشاهدة الفيديو';
+            videoTitle.className = 'wistia-modal-title';
+            videoBox.appendChild(closeBtn);
+            videoBox.appendChild(videoTitle);
             videoBox.appendChild(video);
             overlay.appendChild(videoBox);
             document.body.appendChild(overlay);
